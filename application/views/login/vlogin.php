@@ -5,8 +5,12 @@
 			<div class="col s5">
 				<div class="card hoverable">
 					<div class="card-image" id="altoimagen">
-						<i id="logo" class="medium material-icons blanco">account_circle</i>
-					</div>
+							<img id="logo1" src="imagen/EveCaplogo.png">
+							<div class="pp">
+									<p class="white-text">INICIO SESION</p>
+							</div>
+
+						</div>
 					<div id="alt8" class="card-content">
 						<div class="row">
 							<div class="input-field col s12">
