@@ -10,6 +10,7 @@ class Clogin extends CI_Controller
 
   public function index()
   {
+    $this->load->view('login/vheaderlogin.php');
     $this->load->view('login/vlogin.php');
   }
 }
