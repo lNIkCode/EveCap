@@ -23,10 +23,10 @@ class clogin extends ci_Controller
 		$res  = $this->mlogin->ingresar($usu,$pass);
 
 		if ($res == 1){
-			$this->load->view('Layout/header');
-			$this->load->view('Layout/menu');
-			$this->load->view('vsubeventos');
-			$this->load->view('Layout/footer');
+			$this->load->view('layout/header');
+			$this->load->view('layout/menu');
+			$this->load->view('vprincipal');
+			$this->load->view('layout/footer');
 		}
 		else{
 			$data['mensaje']= "Usuario o Contraseña Erronea";
