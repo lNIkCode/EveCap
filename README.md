@@ -1,2 +1,2 @@
-# PracticasUCV
+# Sistema EveCap
 sistema de eventos
