@@ -22,8 +22,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Asistencia</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Historial</a></li>
+            <li class="active"><a href="<?php echo base_url();?>cregpersonas"><i class="fa fa-circle-o"></i> Asistencia</a></li>
+            <li><a href="<?php echo base_url();?>cregpersonas"><i class="fa fa-circle-o"></i> Historial</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -35,13 +35,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Eventos</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Sub Eventos</a></li>
+            <li><a href="<?php echo base_url();?>ceventos"><i class="fa fa-circle-o"></i> Eventos</a></li>
+            <li><a href="<?php echo base_url();?>csubeventos"><i class="fa fa-circle-o"></i> Sub Eventos</a></li>
           </ul>
         </li>
-        <li><a href="https://adminlte.io/docs"><i class="glyphicon glyphicon-user"></i><span>Gestion Usuarios</span></a></li>
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i><span>Reportes</span></a></li>
-        <li><a href="https://adminlte.io/docs"><i class="glyphicon glyphicon-tasks"></i><span>Encuestas</span></a></li>
+        <li><a href="<?php echo base_url();?>cregpersonas"><i class="glyphicon glyphicon-user"></i><span>Gestion Usuarios</span></a></li>
+        <li><a href="<?php echo base_url();?>creportes"><i class="fa fa-book"></i><span>Reportes</span></a></li>
+        <li><a href="<?php echo base_url();?>cencuestas"><i class="glyphicon glyphicon-tasks"></i><span>Encuestas</span></a></li>
         <li class="header">Herramientas</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Perfil</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Cambiar Contraseña</span></a></li>
