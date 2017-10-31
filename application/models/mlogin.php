@@ -1,31 +1,32 @@
 <?php
 
-class Mlogin extends CI_model
+
+class mlogin extends CI_Model
 {
 
-  public function ingresar($usu,$pass)
-  {
-    $this->db->select('u.codusu, u.codper, p.nomper, p.appper, p.apmper');
-    $this->db->from('usuario u');
-    $this->db->join('persona p','p.codper = u.codper');
-    $this->db->where('u.user',$usu);
-    $this->db->where('u.pass',$pass);
+	public function ingresar ($usu,$pass){
 
-    $resultado = $this->db->get();
-    if($resultado->num_rows() == 1)
+		$this->db->select('p.codper, u.codusu, p.nomper, p.appper, p.apmper');
+		$this->db->from('usuario u');
+		$this->db->join('persona p','p.codper = u.codper');
+		$this->db->WHERE('u.user', $usu);
+		$this->db->WHERE('u.pass', $pass);
+
+		$resultado = $this->db->get();
+		if($resultado-> num_rows() == 1)
     {
-      $r = $resultado->row();
-      $s_usuario = array(
-        's_idpersona' => $r->codper,
-        's_idusuario' => $r->codusu,
-        's_usuario' => $r->nomper.", ".$r->appper.", ".$r->apmper
-       );
+			$r         = $resultado-> row();
+			$s_usuario = array(
+				'$_codper'   => $r->codper,
+				'$s_codusu'  => $r->codusu,
+				'$s_usuario' => $r->nomper.", ".$r->appper." ".$r->apmper
+      );
 
-       $this->session->set_userdata($s_usuario);
-       return 1;
-    }else{
-       return 0;
-    }
+			$this->session->set_userdata($s_usuario);
+      return 1;
+		}else{
+			return 0;
+		}
 
-  }
+	}
 }
