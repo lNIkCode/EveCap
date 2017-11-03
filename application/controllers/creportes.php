@@ -1,4 +1,5 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 class Creportes extends ci_Controller
 {
 
@@ -8,6 +9,9 @@ class Creportes extends ci_Controller
 	}
 
 	public function index (){
-		$this->load->view('vencuestas');
+		$this->load->view('layout/header');
+		$this->load->view('layout/menu');
+		$this->load->view('vreportes');
+		$this->load->view('layout/footer');
 	}
 }
