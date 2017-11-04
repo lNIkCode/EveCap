@@ -10,13 +10,12 @@
   </tr>
 
 <?php
-require 'composer_demo/vendor/autoload.php';
+require 'vendor/autoload.php';
 
-$reniecDni = new Tecactus\Reniec\DNI('wKXAzfuw4oJWOmkky6c4G'
-.'a9ISFmHT9pyhfTYCH7K');
+$reniecDni = new Tecactus\Reniec\DNI('wKXAzfuw4oJWOmkky6c4Ga9ISFmHT9pyhfTYCH7K');
 
 try {
-  $data = $reniecDni -> get('46907987');
+  $data = $reniecDni -> get('18009714');
 echo '<tr>';
  foreach ($data as $value) {
   echo  '<td>'.$value.'</td>';

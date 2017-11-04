@@ -8,6 +8,9 @@ class Cregpersonas extends ci_Controller
 	}
 
 	public function index (){
-		$this->load->view('vencuestas');
+		$this->load->view('layout/header');
+		$this->load->view('layout/menu');
+		$this->load->view('vregpersonas');
+		$this->load->view('layout/footer');
 	}
 }
