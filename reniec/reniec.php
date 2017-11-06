@@ -3,7 +3,7 @@
 	{
 		function __construct()
 		{
-			$this->open('solver.db');
+			$this->open('reniec/solver.db');
 		}
 	}
 	class Reniec

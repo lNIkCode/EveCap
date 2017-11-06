@@ -10,7 +10,7 @@ class mlogin extends CI_model
 		$this->db->from('persona p');
 		$this->db->join('usuario u','p.codper = u.codper');
 		$this->db->join('perfil pf','p.codperf = pf.codperf');
-		$this->db->WHERE('u.user', $usu);
+		$this->db->WHERE('u.userper', $usu);
 		$this->db->WHERE('u.pass', $pass);
 
 		$resultado = $this->db->get();
