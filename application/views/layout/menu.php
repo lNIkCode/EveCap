@@ -39,7 +39,7 @@
             <li><a href="<?php echo base_url();?>csubeventos"><i class="fa fa-circle-o"></i> Sub Eventos</a></li>
           </ul>
         </li>
-        <li><a href="<?php echo base_url();?>cregpersonas"><i class="glyphicon glyphicon-user"></i><span>Gestion Usuarios</span></a></li>
+        <li><a href="<?php echo base_url();?>cgesusuarios"><i class="glyphicon glyphicon-user"></i><span>Gestion Usuarios</span></a></li>
         <li><a href="<?php echo base_url();?>creportes"><i class="fa fa-book"></i><span>Reportes</span></a></li>
         <li><a href="<?php echo base_url();?>cencuestas"><i class="glyphicon glyphicon-tasks"></i><span>Encuestas</span></a></li>
         <li class="header">Herramientas</li>

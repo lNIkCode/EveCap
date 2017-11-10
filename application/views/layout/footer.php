@@ -81,6 +81,10 @@ $.widget.bridge('uibutton', $.ui.button);
 <?php if($this->uri->segment(1)=='cregpersonas') {?>
   <script src="<?= base_url(); ?>js/regpersonas.js"></script>
 <?php } ?>
+
+<?php if($this->uri->segment(1)=='cgesusuarios') {?>
+  <script src="<?= base_url(); ?>js/gesusuarios.js"></script>
+<?php } ?>
 <!-- librerias para usar luego
 <?php if($this->uri->segment(1)=='cnotas') {?>
   <script src="<?= base_url(); ?>js/nota.js"></script>

@@ -55,8 +55,7 @@
       </div>
     </form>
     <!-- /.social-auth-links -->
-    <a href="#">Olvidé mi contraseña</a><br>
-    <a href="register.html" class="text-center">Registrar a un nuevo Usuario</a>
+    <a href="#">Olvidé mi contraseña</a><br>    
     <br>
 	<?php echo $mensaje;?>
   </div>
