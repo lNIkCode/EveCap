@@ -1,6 +1,5 @@
 <?php
 
-
 class mlogin extends CI_model
 {
 
