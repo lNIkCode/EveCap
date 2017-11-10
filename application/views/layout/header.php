@@ -59,18 +59,8 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" ></script>
-  <!-- jQuery 3 -->
-  <script src="<?php echo base_url();?>assets/bower_components/jquery/dist/jquery.min.js" ></script>
 
-  <!-- JS file easyautocomplete--> <!--
-  <script src="<?php echo base_url();?>js/easyautocomplete/jquery.easy-autocomplete.min.js"></script>
--->
-  <!-- CSS file easyautocomplete--> <!--
-  <link rel="stylesheet" href="<?php echo base_url();?>js/easyautocomplete/easy-autocomplete.min.css">
--->
-  <!-- Additional CSS Themes file - not required | easyautocomplete--> <!--
-  <link rel="stylesheet" href="<?php echo base_url();?>js/easyautocomplete/easy-autocomplete.themes.min.css">
--->
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">

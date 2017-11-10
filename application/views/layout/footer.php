@@ -11,6 +11,8 @@ reservados.
 </footer>
 <div class="control-sidebar-bg"></div>
 </div>
+<!-- jQuery 3 -->
+<script src="<?php echo base_url();?>assets/bower_components/jquery/dist/jquery.min.js" ></script>
 <script src="<?php echo base_url();?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
@@ -75,11 +77,11 @@ $.widget.bridge('uibutton', $.ui.button);
 <?php } ?>
 <!--FIN LIBRERIAS DE REPORTES -->
 
-<!-- librerias para usar luego
-<?php if($this->uri->segment(1)=='cpersona') {?>
-  <script src="<?= base_url(); ?>js/persona.js"></script>
-<?php } ?>
 
+<?php if($this->uri->segment(1)=='cregpersonas') {?>
+  <script src="<?= base_url(); ?>js/regpersonas.js"></script>
+<?php } ?>
+<!-- librerias para usar luego
 <?php if($this->uri->segment(1)=='cnotas') {?>
   <script src="<?= base_url(); ?>js/nota.js"></script>
 <?php } ?>
