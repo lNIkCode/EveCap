@@ -1,114 +1,88 @@
-
-<!-- Main content -->
-<section class="content">
-  <div class="row">
-    <!-- left column -->
-    <div class="col-md-12">
-      <!-- general form elements -->
-      <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Asistencia a eventos</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal" method="post" action="<?php echo base_url(); ?>cregpersonas/registrar">
-              <div class="box-body">
-                <div class="form-group">
-
-                  <label class="col-sm-1 control-label">DNI</label>
-                  <div class="col-sm-2">
-                  <div class="box-tools">
-				            <div class="input-group input-group-sm" style="width: 150px;">
-					            <input type="text" name="txtBuscarCiudad" id="txtBuscarCiudad" class="form-control pull-right" placeholder="Buscar DNI">
-        					    <div class="input-group-btn">
-        					    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-        					    </div>
-        				    </div>
-        			    </div>
-                  </div>
-                  <div class="col-sm-2"></div>
-                  <div class="col-sm-3">
-                  <label>Evento: </label>
-                  <select id="cboevento" class="form-control">
-                    <option value="">Eliga Evento</option>
-                  </select>
-                  </div>
-                  <div class="col-sm-3">
-                  <label>Sub Evento: </label>
-                  <select id="cbosubevento" class="form-control">
-                    <option value="">Eliga Sub Evento</option>
-                  </select>
-                  <br><br><br>
-                  </div>
-
-                </div>
-                  <div class="form-group">
-
-                  <div class="col-sm-2">
-                  <label>DNI</label>
-                  <input type="text" class="form-control" placeholder="Dni" name="txtdni">
-                  </div>
-                  <div class="col-sm-3">
-                  <label>NOMBRES</label>
-                  <input type="text" class="form-control" placeholder="Nombres" name="txtnombres">
-                  </div>
-                  <div class="col-sm-3">
-                  <label>APELLIDO PATERNO</label>
-                  <input type="text" class="form-control" placeholder="Apellido Paterno" name="txtapp">
-                  </div>
-                  <div class="col-sm-3">
-                  <label>APELLIDO MATERNO</label>
-                  <input type="text" class="form-control" placeholder="Apellido Materno" name="txtapm">
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="button" class="btn btn-default pull-right" onclick="<?php echo base_url(); ?>cregpersonas">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right" value="Ingresar">Ingresar</button>
-                <br><br>
-              </div>
-              <!-- /.box-footer -->
-              <div class="col-md-12">
-              <div class="box">
-
-            <!-- /.box-header -->
-            <div class="box box-primary">
-              <table id="tblAsistencia" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th style="width: 5%;background-color: #006699; color: white;">#</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Dni</th>
-                  <th style="width: 15%;background-color: #006699; color: white;">Nombre</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Paterno</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Materno</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Sub Evento</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Hora de Ingreso</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-
-              </table>
-            </div>
-
-          </div>
-        </div>
-            </form>
-          </div>
-      <!-- /.box -->
-    </div>
-  </div>
-</section>
+<div class="row">
+	<!-- left column -->
+	<div class="col-md-12">
+		<!-- general form elements -->
+		<div class="box box-primary">
+			<div class="box-header with-border bg-blue">
+				<h3 class="box-title">Asistencia a eventos</h3>
+			</div>
+			<div class="box-body">
+				<div class="col-sm-2">
+					<div class="form-group">
+						<div class="box-tools">
+							<label class="control-label">Buscar DNI:</label>
+							<div class="input-group input-group-sm" style="width: 100%;">
+								<input type="text" name="txtBuscarDNI" id="txtBuscarDNI" class="form-control pull-right solonum" placeholder="Buscar DNI">
+								<div class="input-group-btn">
+									<button type="submit" id="btndni" class="btn btn-default"><i class="fa fa-search"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-5">
+					<div class="form-group">
+						<label class="control-label">Evento: </label>
+						<select class="form-control select2" id="cboevento" name="cboevento" class="form-control" style="width: 100%;">
+              <option selected="selected" value="">Eliga Evento</option>
+            </select>
+					</div>
+				</div>
+				<div class="col-sm-5">
+					<div class="form-group">
+						<label class="control-label">Sub Evento: </label>
+						<select class="form-control select2" id="cbosubevento" name="cbosubevento" class="form-control" style="width: 100%;">
+              <option selected="selected" value="">Eliga Sub Evento</option>
+            </select>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<label>NOMBRES</label>
+						<input type="text" class="form-control sololet" placeholder="Nombres" name="txtnombres" id="txtnombres">
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label>APELLIDO PATERNO</label>
+						<input type="text" class="form-control sololet" placeholder="Apellido Paterno" name="txtapp" id="txtapp">
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label>APELLIDO MATERNO</label>
+						<input type="text" class="form-control sololet" placeholder="Apellido Materno" name="txtapm" id="txtapm">
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<br>
+					<div class="btn-group pull-right">
+						<button type="submit" class="btn btn-primary" id="btnIngresar">Ingresar Alumno</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.box-body -->
+			<div class="box-footer">
+				<div id="MErrorAsistencia" style="color: red;"></div>
+				<table id="tblAsistencia" class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th style="width: 3%;">N°</th>
+							<th style="width: 6%;">Dni</th>
+							<th style="width: 8%;">Nombre</th>
+							<th style="width: 6%;">Paterno</th>
+							<th style="width: 6%;">Materno</th>
+							<th style="width: 20%;">Sub Evento</th>
+							<th style="width: 4%;">Hora de Ingreso</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
-  var baseurl = "<?php echo base_url(); ?>";
+	var baseurl = "<?php echo base_url(); ?>";
 </script>
-
-<?php
-    require("reniec/curl.php");
-    require("reniec/reniec.php");
-
-    $persona = new Reniec();
-    $dni     ="46907987";
-
-    print_r($persona->search($dni));

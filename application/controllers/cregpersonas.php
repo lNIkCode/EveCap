@@ -5,6 +5,7 @@ class Cregpersonas extends CI_Controller
     {
         parent::__construct();
         $this->load->model('mregpersonas');
+        $this->load->helper('date_helper');
     }
 
     public function index()
@@ -23,6 +24,16 @@ class Cregpersonas extends CI_Controller
         echo json_encode($resultado);
     }
 
+    public function dnipersona()
+    {
+        require("reniec/curl.php");
+        require("reniec/reniec.php");
+
+        $persona = new Reniec();
+        $dni     = $this->input->post('dnip');
+        echo json_encode($persona->search($dni));
+    }
+
     public function getSubEventos()
     {
         $c = $this->input->post('codeve');
@@ -33,7 +44,40 @@ class Cregpersonas extends CI_Controller
 
     public function getAsistencias()
     {
-        echo json_encode($this->mregpersonas->getAsistencias());
+        $a = $this->input->post('cbe');
+        $b =  $this->input->post('cbs');
+        $resultado = $this->mregpersonas->getAsistencias($a, $b);
+        echo json_encode($resultado);
+    }
+
+    public function RegistroPersona()
+    {
+        $param['dniper']  = $this->input->post('dn');
+        $param['nomper']  = $this->input->post('no');
+        $param['appper']  = $this->input->post('pa');
+        $param['apmper']  = $this->input->post('ma');
+        $dniper = $this->input->post('dn');
+
+        $lastid = $this->mregpersonas->RegistroPersona($param,$dniper);
+
+        if ($lastid > 0) {
+            $paramasis['codper'] = $lastid;
+            $paramasis['codeve']  = $this->input->post('ce');
+            $paramasis['codsubeve']  = $this->input->post('cs');
+
+            $formatofecha = 'Y-m-d';
+            $formatoHora = 'H:i:s';
+
+            $paramasis['fecasis'] = date($formatofecha);
+            $paramasis['horasis'] = date($formatoHora);
+
+            $paramval['codeve'] = $this->input->post('ce');
+            $paramval['codsubeve'] = $this->input->post('cs');
+            $paramval['codper'] = $lastid;
+
+            echo $this->mregpersonas->RegistroAsistencia($paramasis,$paramval);
+        }
+
     }
 
     // public function getAsistencias()

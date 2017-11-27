@@ -15,6 +15,12 @@ class clogin extends ci_Controller
 
 	}
 
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url());
+	}
+
 	public function ingresar (){
 
 		$usu  = $this->input->post('txtusuario');

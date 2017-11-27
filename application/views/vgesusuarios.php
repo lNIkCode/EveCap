@@ -1,105 +1,317 @@
 <div class="row">
-<div class="col-md-8">
-          <!-- Horizontal Form -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Horizontal Form</h3>
+<div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border bg-blue">
+              <h3 class="box-title">Gestion de Usuario</h3>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
+            <div class="box-body">
 
-              <form action="<?php echo base_url(); ?>cgesusuarios/Registrarpersona" method="POST" class="form-horizontal">
-                 <div class="box-body">
-                <?php echo "Usuario de Inicio:" . $this->session->userdata('s_usuario'); ?>
-              <div class="box-body">
-
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">DNI/label></label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control"  name="txtdniper" id="inputEmail3" placeholder="Ingrese su nimero de DNI">
-                  </div>
-                  </div>
-
-                   <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Nombre/label></label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control"  name="txtnomper" id="inputEmail3" placeholder="Ingrese su nombre">
-                  </div>
-                  </div>
-
-
-                   <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Apellido Paterno</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" name="txtappper" id="inputEmail3" placeholder="Ingrese apellido paterno">
-                  </div>
-                  </div>
-
-                   <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Apellido Materno</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control"  name="txtapmper" id="inputEmail3" placeholder="Ingrese Apellido Materno">
-                  </div>
-                  </div>
-
-                  <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Teléfono </label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control"  name="txttelper" id="inputEmail3" placeholder="Ingrese su numero de telefono">
-                  </div>
-                  </div>
-
-                   <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Correo</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control"  name="txtemailper" id="inputEmail3" placeholder= "ingrese su Email">
-                  </div>
-                </div>
-
-                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Fecha de Nacimiento</label>
-                  <div class="col-sm-10">
-                    <input type="date" class="form-control"  name="txtfnacper" id="inputEmail3" placeholder= "ingrese su fecha de nacimiento">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                <label class=" col-sm-2 control-label">Perfil: </label>
-                <select id="cboperfil" name="cboperfil" class="form-control">
-                  <option value="">Eliga un Perfil</option>
-                </select>
+              <div class="btn-group">
+              <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#modalNuevoUsuario"><i class="glyphicon glyphicon-plus"></i> Registar Nuevo Usuario</button>
               </div>
 
-                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control"  name="txtuserper" id="inputEmail3" placeholder= "ingrese su Usuario">
-                  </div>
-                </div>
-
-
-                  <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Clave</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control"  name="txtupassper" id="inputEmail3" placeholder= "ingrese su Usuario">
-                  </div>
-                </div>
-
-                  </div>
-                </div>
 
               <div class="box-footer">
-                <div class="col-sm-10 pull-right">
-                <button type="submit" class="btn btn-info pull-right">Registar</button>
-              </div>
+                <table id="tblgetUsuarios" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th style="width:  2%;">N°</th>
+                      <th style="width: 10%;">DNI</th>
+                      <th style="width: 12%;">Nombre</th>
+                      <th style="width: 10%;">Paterno</th>
+                      <th style="width: 10%;">Materno</th>
+                      <th style="width: 10%;">Sexo</th>
+                      <th style="width: 10%;">Perfil</th>
+                      <th style="width: 11%;">Celular</th>
+                      <th style="width: 10%;">Email</th>
+                      <th style="width: 10%;">F. Nacimiento</th>
+                      <th style="width: 10%;">Accion</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
               </div>
               <!-- /.box-footer -->
-            </form>
+  </div>
           </div>
         </div>
       </div>
+
+
+      <div class="modal fade" id="modalNuevoUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      	<div class="modal-dialog modal-sm-7" role="document">
+      		<div class="modal-content">
+      			<!-- CABECERA MODAL-->
+      			<div class="modal-header btn-info">
+      				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      				<h4 class="modal-title" id="myModalLabel">Nuevo Usuario</h4>
+      			</div>
+      			<!-- FIN CABECERA MODAL-->
+      			<div class="modal-body">
+      				<form class="form-horizontal">
+      					<!-- parametros ocultos -->
+      					<div class="box-body">
+      						<div class="form-group">
+      							<label class="col-sm-4 control-label">DNI: </label>
+      							<div class="col-sm-7">
+      								<input maxlength="8" type="text" name="mdltxtdni" class="form-control solonum" id="mdltxtdni" placeholder="Ingrese DNI">
+      							</div>
+      						</div>
+                  <div class="form-group">
+      							<label class="col-sm-4 control-label">Nombre: </label>
+      							<div class="col-sm-7">
+      								<input type="text" name="mdltxtNombre" class="form-control sololet" id="mdltxtNombre" placeholder="Ingrese Nombre">
+      							</div>
+      						</div>
+                  <div class="form-group">
+      							<label class="col-sm-4 control-label">Apellido Paterno: </label>
+      							<div class="col-sm-7">
+      								<input type="text" name="mdltxtApPaterno" class="form-control sololet" id="mdltxtApPaterno" placeholder="Ingrese Apellido Paterno">
+      							</div>
+      						</div>
+                  <div class="form-group">
+      							<label class="col-sm-4 control-label">Apellido Materno: </label>
+      							<div class="col-sm-7">
+      								<input type="text" name="mdltxtApMaterno" class="form-control sololet" id="mdltxtApMaterno" placeholder="Ingrese Apellido Materno">
+      							</div>
+      						</div>
+              <div class="form-group">
+               <label class="col-sm-4 control-label">Sexo: </label>
+               <div class="col-sm-7">
+                 <select class="form-control" id="mdlcbxSexo" name="mdlcbxSexo">
+                   <option value="">Elija Su Sexo</option>
+                   <option value="M">Masculino</option>
+                   <option value="F">Femenino</option>
+                 </select>
+               </div>
+           </div>
+           <div class="form-group">
+             <label class="col-sm-4 control-label">Perfil: </label>
+             <div class="col-sm-7">
+               <select class="form-control" id="mdlcbxPerfil" name="mdlcbxPerfil">
+                  <option selected="selected" value="">Escoja Perfil</option>
+                </select>
+             </div>
+           </div>
+           <div class="form-group">
+             <label class="col-sm-4 control-label date">F. Nacimiento: </label>
+             <div class="col-sm-7 input-group date">
+               <div class="input-group-addon">
+                 <i class="fa fa-calendar"></i>
+               </div>
+               <input maxlength="10" type="text" name="mdlfechaNacimiento" class="form-control pull-right solofec" id="mdlfechaNacimiento">
+             </div>
+           </div>
+           <div class="form-group">
+             <label class="col-sm-4 control-label">Telefono: </label>
+             <div class="col-sm-7">
+               <input maxlength="9" type="text" name="mdlTelefono" class="form-control solonum" id="mdlTelefono" placeholder="Ingrese Numero Celular">
+             </div>
+           </div>
+           <div class="form-group">
+             <label class="col-sm-4 control-label">Email: </label>
+             <div class="col-sm-7">
+               <input type="email" name="mdlEmail" class="form-control" id="mdlEmail" placeholder="Ingrese Email">
+             </div>
+           </div>
+      					</div>
+                <div id="MerroIngresar" style="color: red;"></div>
+      				</form>
+      			</div>
+      			<!-- BOTONES -->
+      			<div class="modal-footer">
+      				<button type="button" class="btn btn-default" id="mbtnCerrarModal" data-dismiss="modal">Cancelar</button>
+      				<button type="button" class="btn btn-info" id="mbtnRegistrar">Registrar</button>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+
+<!--modal editar de aqui para abajo-->
+
+<div class="modal fade" id="modalEditarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm-7" role="document">
+    <div class="modal-content">
+      <!-- CABECERA MODAL-->
+      <div class="modal-header bg-blue">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar Usuario</h4>
+      </div>
+      <!-- FIN CABECERA MODAL-->
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <!-- parametros ocultos -->
+          <input type="hidden" id="emdlCodPersona">
+
+          <div class="box-body">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">DNI: </label>
+              <div class="col-sm-7">
+                <input maxlength="8" type="text" name="emdltxtdni" class="form-control solonum" id="emdltxtdni" placeholder="Ingrese DNI">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Nombre: </label>
+              <div class="col-sm-7">
+                <input type="text" name="emdltxtNombre" class="form-control sololet" id="emdltxtNombre" placeholder="Ingrese Nombre">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Apellido Paterno: </label>
+              <div class="col-sm-7">
+                <input type="text" name="emdltxtApPaterno" class="form-control sololet" id="emdltxtApPaterno" placeholder="Ingrese Apellido Paterno">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Apellido Materno: </label>
+              <div class="col-sm-7">
+                <input type="text" name="emdltxtApMaterno" class="form-control sololet" id="emdltxtApMaterno" placeholder="Ingrese Apellido Materno">
+              </div>
+            </div>
+        <div class="form-group">
+         <label class="col-sm-4 control-label">Sexo: </label>
+         <div class="col-sm-7">
+           <select class="form-control" id="emdlcbxSexo" name="emdlcbxSexo">
+             <option value="">Elija Su Sexo</option>
+             <option value="M">Masculino</option>
+             <option value="F">Femenino</option>
+           </select>
+         </div>
+     </div>
+     <div class="form-group">
+       <label class="col-sm-4 control-label">Perfil: </label>
+       <div class="col-sm-7">
+         <select class="form-control" id="emdlcbxPerfil" name="emdlcbxPerfil">
+            <option selected="selected" value="">Escoja Perfil</option>
+          </select>
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="col-sm-4 control-label date">F. Nacimiento: </label>
+       <div class="col-sm-7 input-group date">
+         <div class="input-group-addon">
+           <i class="fa fa-calendar"></i>
+         </div>
+         <input maxlength="10" type="text" name="emdlfechaNacimiento" class="form-control pull-right" id="emdlfechaNacimiento">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="col-sm-4 control-label">Telefono: </label>
+       <div class="col-sm-7">
+         <input maxlength="9" type="text" name="emdlTelefono" class="form-control solonum" id="emdlTelefono" placeholder="Ingrese Numero Celular">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="col-sm-4 control-label">Email: </label>
+       <div class="col-sm-7">
+         <input type="email" name="emdlEmail" class="form-control" id="emdlEmail" placeholder="Ingrese Email">
+       </div>
+     </div>
+          </div>
+          <div id="MErrorEditar" style="color:red;"></div>
+        </form>
+      </div>
+      <!-- BOTONES -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="embtnCerrarModal" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-info" id="embtnActualizar">Actualizar</button>
+      </div>
     </div>
-   </div>
+  </div>
+</div>
+
+
+<!-- model de contraseñar y usuarios de aqui para abajo -->
+
+
+<div class="modal fade" id="modalUsuarioClave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <!-- CABECERA MODAL-->
+      <div class="modal-header bg-green">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Crea y/o modificar Usuario</h4>
+      </div>
+      <!-- FIN CABECERA MODAL-->
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <!-- parametros ocultos -->
+          <input type="hidden" id="umdlcodusu">
+          <input type="hidden" id="umdlcodper">
+
+          <div class="box-body">
+            <div class="col-sm-12">
+            <div class="form-group">
+              <p id="nuevo"></p>
+              </div>
+            </div>
+            <div class="col-sm-12">
+            <div class="form-group">
+              <label>Usuario: </label>
+                <input type="text" name="umdltxtUsuario" class="form-control" id="umdltxtUsuario" placeholder="Ingrese Usuario" style="width: 100%;">
+              </div>
+            </div>
+            <div class="col-sm-12">
+            <div class="form-group">
+              <label >Contraseña: </label>
+                <input type="password" name="umdlpassword" class="form-control" id="umdlpassword" placeholder="Ingrese Una Contraseña" style="width: 100%;">
+              </div>
+            </div>
+            <div class="col-sm-12">
+            <div class="form-group">
+              <label>Confirmar Contraseña: </label>
+                <input type="password" name="umdlpasswordconfirm" class="form-control" id="umdlpasswordconfirm" placeholder="Confirma Tu contraseña" style="width: 100%;">
+              </div>
+            </div>
+          </div>
+          <div id="mensajeErrorCampos" style="color:red;"></div>
+        </form>
+      </div>
+      <!-- BOTONES -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="umbtnCancelar" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-info" id="mbtnCrearUsuario">Crear Usuario</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para Eliminar de qui para abajo-->
+
+<div class="modal fade" id="modalEliminarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <!-- CABECERA MODAL-->
+      <div class="modal-header bg-red">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Eliminar Usuario</h4>
+      </div>
+      <!-- FIN CABECERA MODAL-->
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <!-- parametros ocultos -->
+          <input type="hidden" id="dmdlPersona">
+
+          <div class="box-body">
+            <div class="col-sm-12">
+            <div class="form-group">
+              <div id="nuevo"></div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+            <div class="form-group">
+              <label> ¿ Esta seguro de eliminar al usuario: <p1 id="UsuarioNombre"></p1> ?</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- BOTONES -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="dmbtneliminar" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="dmbtnEliminarUsuario">Aceptar</button>
+      </div>
+    </div>
   </div>
 </div>
 

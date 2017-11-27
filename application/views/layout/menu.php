@@ -23,7 +23,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url();?>cregpersonas"><i class="fa fa-circle-o"></i> Asistencia</a></li>
-            <li><a href="<?php echo base_url();?>cregpersonas"><i class="fa fa-circle-o"></i> Historial</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Historial</a></li>
           </ul>
         </li>
         <li class="treeview">

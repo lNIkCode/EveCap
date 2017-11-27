@@ -4,6 +4,7 @@ class Mregpersonas extends CI_Model
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper('date');
     }
 
     public function getEventos($s)
@@ -14,7 +15,7 @@ class Mregpersonas extends CI_Model
 
     public function getSubEventos($c)
     {
-        $this->db->select('*');
+        $this->db->select('s.codsubeve, s.nomsubeve');
         $this->db->from('subevento s');
         $this->db->WHERE('s.codeve', $c);
         $this->db->WHERE('s.estsubeve', 1);
@@ -23,17 +24,68 @@ class Mregpersonas extends CI_Model
         return $c->result();
     }
 
-    public function getAsistencias()
+    public function getAsistencias($a, $b)
     {
-      $q = " SELECT p.codper rownum, p.codper, p.dniper, p.nomper, p.appper, p.apmper, s.nomsubeve, a.horasis
+
+      $q = " SELECT @rownum:=@rownum+1 AS rownum, p.codper, p.dniper, p.nomper, p.appper, p.apmper, s.nomsubeve, a.horasis
                  FROM asistencia a
                  LEFT JOIN persona p ON a.codper = p.codper
-                 LEFT JOIN subevento s ON a.codsubeve = s.codsubeve
+                 LEFT JOIN subevento s ON a.codsubeve = s.codsubeve,
+                 (SELECT @rownum := 0) r
+                 WHERE (s.codsubeve = $b AND s.codeve = $a)
            ";
 
       $r = $this->db->query($q);
 
       return $r->result();
+    }
+
+    public function RegistroPersona($param,$dniper)
+    {
+      $q = "SELECT p.dniper FROM persona p
+            WHERE (p.estper = 1)";
+      $r = $this->db->query($q);
+      if ($dniper != $r) {
+        $query = "SELECT CAST(p.codper as INT) as codper FROM persona p
+              WHERE (p.estper = 1 AND p.dniper = $dniper)";
+              $query = $this->db->query($query);
+              $query = $query->row();
+              $query = $query->codper;
+              return $codper = $query;
+        }else{
+        $campos = array(
+          'dniper'  => $param['dniper'],
+          'nomper'  => $param['nomper'],
+          'appper'  => $param['appper'],
+          'apmper'  => $param['apmper'],
+          'estper'  => 1,
+          'codperf' => 4,
+        );
+          $this->db->insert('persona', $campos);
+          return $this->db->insert_id();
+      }
+    }
+
+    public function RegistroAsistencia($paramasis,$paramval)
+    {
+      $validacio = array(
+        'codeve' => $paramval['codeve'],
+        'codeve' => $paramval['codsubeve'],
+        'codeve' => $paramval['codper'],
+      );
+      if ($paramval != $validacio)
+      {
+        return 666;
+      }else {
+        $campos = array(
+          'codeve'    => $paramasis['codeve'],
+          'codsubeve' => $paramasis['codsubeve'],
+          'codper'    => $paramasis['codper'],
+          'fecasis'   => $paramasis['fecasis'],
+          'horasis'   => $paramasis['horasis'],
+        );
+        $this->db->insert('asistencia', $campos);
+      }
     }
 
     // public function getAsistencias($start, $length, $search)
