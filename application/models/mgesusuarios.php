@@ -56,9 +56,6 @@ class Mgesusuarios extends CI_model
 
  public function UdpUsuario($param,$cdp)
     {
-      /*$q = "SELECT u.codusu FROM usuario u
-            WHERE (u.codusu = $cdp)";
-      $r = $this->db->query($q);*/
 
       if ($cdp != 'null') {
         $campos2 = array(

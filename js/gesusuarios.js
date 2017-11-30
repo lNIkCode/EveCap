@@ -74,7 +74,7 @@ $.post(baseurl + "cgesusuarios/getPerfiles", {
 				render: function(data, type, row) {
 					return '<span class="pull-right">' +
 						'<div class="dropdown">' +
-						'  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
+						'  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
 						'    Acciones' +
 						'  <span class="caret"></span>' +
 						'  </button>' +
@@ -83,7 +83,7 @@ $.post(baseurl + "cgesusuarios/getPerfiles", {
 						'    onClick="selPersonas(\'' + row.codper + '\',\'' + row.dniper + '\',\'' + row.nomper + '\',\'' + row.appper + '\',\'' + row.apmper +
 						'\',\'' + row.telper + '\',\''+ row.email + '\');"><i class="glyphicon glyphicon-edit" style="color:#006699"></i> Editar</a></li>'+
 						'    <li><a href="#" title="Usuario formato" data-toggle="modal" data-target="#modalUsuarioClave" onClick="selUser(\'' + row.codusu +
-						'\',\'' + row.codper + '\',\'' + row.userper + '\',\'' + row.nomper + '\',\'' + row.appper + '\');"><i class="glyphicon glyphicon-lock" style="color:#18a326"></i> Crear Usuario </a></li>' +
+						'\',\'' + row.codper + '\',\'' + row.userper + '\',\'' + row.nomper + '\',\'' + row.appper + '\');"><i class="glyphicon glyphicon-lock" style="color:#7c7c7c"></i> Crear Usuario </a></li>' +
 						'    <li><a href="#" title="Eliminar formato" data-toggle="modal" data-target="#modalEliminarUsuario" onClick="selEliminar(\'' + row.codper + '\',\'' + row.nomper+ '\',\'' + row.appper+ '\');"><i class="glyphicon glyphicon-remove" style="color:#c63218"></i> Eliminar </a></li>' +
 						'    </ul>' +
 						'</div>' +

@@ -75,6 +75,32 @@ $.widget.bridge('uibutton', $.ui.button);
 <?php } ?>
 <!--FIN LIBRERIAS DE REPORTES -->
 
+<!-- LIBRERIAS DE REGPERSONAS -->
+<?php if($this->uri->segment(1)=='chistorial') {?>
+  <!-- Select2 -->
+  <script src="<?= base_url(); ?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
+  <!-- InputMask -->
+  <script src="<?= base_url(); ?>assets/plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="<?= base_url(); ?>assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="<?= base_url(); ?>assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  <!-- bootstrap datepicker -->
+  <script src="<?= base_url(); ?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <!-- bootstrap color picker -->
+  <script src="<?= base_url(); ?>assets/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+  <!-- bootstrap time picker -->
+  <script src="<?= base_url(); ?>assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+  <!-- SlimScroll -->
+  <script src="<?= base_url(); ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- iCheck 1.0.1 -->
+  <script src="<?= base_url(); ?>assets/plugins/iCheck/icheck.min.js"></script>
+  <!-- FastClick -->
+  <script src="<?= base_url(); ?>assets/bower_components/fastclick/lib/fastclick.js"></script>
+
+<script src="<?= base_url(); ?>js/historial.js"></script>
+<!-- Scrip para usar datapicker -->
+<?php } ?>
+<!--FIN LIBRERIAS DE REPORTES -->
+
 <!-- LIBRERIAS DE EVENTOS -->
 <?php if($this->uri->segment(1)=='ceventos') {?>
   <!-- Select2 -->
@@ -174,6 +200,31 @@ $.widget.bridge('uibutton', $.ui.button);
   <script src="<?= base_url(); ?>assets/bower_components/fastclick/lib/fastclick.js"></script>
 
   <script src="<?= base_url(); ?>js/gesusuarios.js"></script>
+
+<?php } ?>
+<!-- FIN DE Reg Personas -->
+<!-- INICIO Reg Personas -->
+<?php if($this->uri->segment(1)=='cencuestas') {?>
+  <!-- Select2 -->
+  <script src="<?= base_url(); ?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
+  <!-- InputMask -->
+  <script src="<?= base_url(); ?>assets/plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="<?= base_url(); ?>assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="<?= base_url(); ?>assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  <!-- bootstrap datepicker -->
+  <script src="<?= base_url(); ?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <!-- bootstrap color picker -->
+  <script src="<?= base_url(); ?>assets/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+  <!-- bootstrap time picker -->
+  <script src="<?= base_url(); ?>assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+  <!-- SlimScroll -->
+  <script src="<?= base_url(); ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- iCheck 1.0.1 -->
+  <script src="<?= base_url(); ?>assets/plugins/iCheck/icheck.min.js"></script>
+  <!-- FastClick -->
+  <script src="<?= base_url(); ?>assets/bower_components/fastclick/lib/fastclick.js"></script>
+
+  <script src="<?= base_url(); ?>js/encuestas.js"></script>
 
 <?php } ?>
 <!-- FIN DE Reg Personas -->

@@ -95,6 +95,7 @@ else {
 			$('#txtapp').val('');
 			$('#txtapm').val('');
 			$('#txtBuscarDNI').val('');
+			$('#MErrorAsistencia').html('');
 		}
 	});
 }

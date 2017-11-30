@@ -12,7 +12,7 @@
 						<div class="box-tools">
 							<label class="control-label">Buscar DNI:</label>
 							<div class="input-group input-group-sm" style="width: 100%;">
-								<input type="text" name="txtBuscarDNI" id="txtBuscarDNI" class="form-control pull-right solonum" placeholder="Buscar DNI">
+								<input maxlength="8" type="text" name="txtBuscarDNI" id="txtBuscarDNI" class="form-control pull-right solonum" placeholder="Buscar DNI">
 								<div class="input-group-btn">
 									<button type="submit" id="btndni" class="btn btn-default"><i class="fa fa-search"></i></button>
 								</div>

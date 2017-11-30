@@ -3,15 +3,15 @@
 		<div class="col-md-12">
 			<div class="box box-primary">
 				<div class="box-header with-border bg-blue">
-					<h2 class="box-title">Crear Sub Evento</h2>
+					<h2 class="box-title">Crear Ponencia</h2>
 				</div>
 				<div class="box-body">
 					<div class="col-sm-4">
 						<div class="form-group">
 
-							<label>Escojer Evento</label>
+							<label>Escoge Evento</label>
 							<select class="form-control select2" name="cbevento" id="cbevento" style="width: 100%;">
-												<option selected="selected" value="">Escoje el Evento</option>
+												<option selected="selected" value="">Escoge el Evento</option>
 											</select>
 						</div>
 					</div>
@@ -19,7 +19,7 @@
 						<div class="form-group">
 							<label>Expositor</label>
 							<select class="form-control select2" name="cbexpositor" id="cbexpositor" style="width: 100%;">
-												<option selected="selected" value="">Escoje el Expositor</option>
+												<option selected="selected" value="">Escoge el Expositor</option>
 											</select>
 						</div>
 					</div>
@@ -27,23 +27,23 @@
 						<div class="form-group">
 							<label>Lugar</label>
 							<select class="form-control select2" name="cblugar" id="cblugar" style="width: 100%;">
-												<option selected="selected" value="">Escoje el Lugar</option>
+												<option selected="selected" value="">Escoge el Lugar</option>
 											</select>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Nombre de Sub Evento</label>
-							<input type="text" class="form-control" name="txtnomsub" id="txtnomsub" placeholder="Ingresar Nombre del Sub Evento">
+							<label>Nombre de Ponencia</label>
+							<input type="text" class="form-control" name="txtnomsub" id="txtnomsub" placeholder="Ingresar Nombre de Ponencia">
 						</div>
 						<div class="form-group">
 							<label>Descripcion</label>
-							<textarea class="form-control" id="txtdescsub" rows="5" name="txtdescsub" placeholder="Ingresar Descripcion del Sub Evento"></textarea>
+							<textarea class="form-control" id="txtdescsub" rows="5" name="txtdescsub" placeholder="Ingresar Descripcion de Ponencia"></textarea>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Fecha SubEvento:</label>
+							<label>Fecha de Ponencia:</label>
 							<div class="input-group date">
 								<div class="input-group-addon">
 									<i class="fa fa-calendar"></i>
@@ -91,11 +91,11 @@
 						<thead>
 							<tr>
 								<th style="width:  2%;">N°</th>
-								<th style="width: 12%;">Nombre del Sub Evento</th>
+								<th style="width: 12%;">Nombre de Ponencia</th>
 								<th style="width: 10%;">Descripcion</th>
 								<th style="width: 10%;">Expositor</th>
 								<th style="width: 10%;">Lugar</th>
-								<th style="width: 11%;">Fecha de SubEvento</th>
+								<th style="width: 11%;">Fecha de Ponencia</th>
 								<th style="width: 10%;">Hora: Inicio - Fin</th>
 								<th style="width: 5%;">Accion</th>
 							</tr>
@@ -122,7 +122,7 @@
 					<input type="hidden" id="mdlidsubevento">
 					<div class="box-body">
 						<div class="form-group">
-							<label class="col-sm-4 control-label">Nombre de Sub Evento</label>
+							<label class="col-sm-4 control-label">Nombre de Ponencia</label>
 							<div class="col-sm-7">
 								<input type="text" name="mdltxtnomsub" class="form-control" id="mdltxtnomsub" placeholder="">
 							</div>
@@ -130,14 +130,14 @@
 						<div class="form-group">
 							<label class="col-sm-4 control-label">Descripcion</label>
 							<div class="col-sm-7">
-								<textarea class="form-control" id="mdltxtdescsub" rows="5" name="mdltxtdescsub" placeholder="Descripcion del Sub Evento"></textarea>
+								<textarea class="form-control" id="mdltxtdescsub" rows="5" name="mdltxtdescsub" placeholder="Descripcion de Ponencia"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-4 control-label">Expositor</label>
 							<div class="col-sm-7">
 								<select class="form-control" id="mdlcbexpositor" name="mdlcbexpositor">
-                   <option selected="selected" value="">Escoja el Expositor</option>
+                   <option selected="selected" value="">Escoge el Expositor</option>
                  </select>
 							</div>
 						</div>
@@ -145,12 +145,12 @@
 							<label class="col-sm-4 control-label">Lugar</label>
 							<div class="col-sm-7">
 								<select class="form-control" id="mdlcblugar" name="mdlcblugar">
-                  <option selected="selected" value="">Escoja Lugar</option>
+                  <option selected="selected" value="">Escoge Lugar</option>
                 </select>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-4 control-label date">Fecha SubEvento:</label>
+							<label class="col-sm-4 control-label date">Fecha Ponencia:</label>
 							<div class="col-sm-7 input-group date">
 								<div class="input-group-addon">
 									<i class="fa fa-calendar"></i>
@@ -201,7 +201,7 @@
       <!-- CABECERA MODAL-->
       <div class="modal-header bg-red">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Eliminar Sub Evento</h4>
+        <h4 class="modal-title" id="myModalLabel">Eliminar Ponencia</h4>
       </div>
       <!-- FIN CABECERA MODAL-->
       <div class="modal-body">

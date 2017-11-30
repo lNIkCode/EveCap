@@ -71,11 +71,11 @@ class Cregpersonas extends CI_Controller
             $paramasis['fecasis'] = date($formatofecha);
             $paramasis['horasis'] = date($formatoHora);
 
-            $paramval['codeve'] = $this->input->post('ce');
-            $paramval['codsubeve'] = $this->input->post('cs');
-            $paramval['codper'] = $lastid;
-
-            echo $this->mregpersonas->RegistroAsistencia($paramasis,$paramval);
+            $ce = $this->input->post('ce');
+            $cs = $this->input->post('cs');
+            $cp = $lastid;
+            
+            echo $this->mregpersonas->RegistroAsistencia($paramasis,$ce,$cs,$cp);
         }
 
     }

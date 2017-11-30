@@ -97,6 +97,26 @@
 
 <?php } ?>
 <!--FIN CONTROLADOR EVENTOS -->
+<!--INICIO CONTROLADOR HISTORIAL -->
+<?php if($this->uri->segment(1)=='chistorial') {?>
+<!-- bootstrap datepicker -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/iCheck/all.css">
+<!-- Bootstrap Color Picker -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+<!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/timepicker/bootstrap-timepicker.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/select2/dist/css/select2.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/skins/_all-skins.min.css">
+
+<?php } ?>
+<!--FIN CONTROLADOR HISTORIAL -->
 <!-- CONTROLADOR csubeventos -->
 <?php if($this->uri->segment(1)=='csubeventos') {?>
 <!-- bootstrap datepicker -->
@@ -136,7 +156,27 @@
 <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/skins/_all-skins.min.css">
 <?php } ?>
 
-<!--FIN CONTROLADOR cgesusuarios -->
+<!--FIN CONTROLADOR ENCUESTA -->
+<!-- CONTROLADOR cgesusuarios -->
+<?php if($this->uri->segment(1)=='cencuestas') {?>
+<!-- bootstrap datepicker -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/iCheck/all.css">
+<!-- Bootstrap Color Picker -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+<!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/timepicker/bootstrap-timepicker.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/select2/dist/css/select2.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/skins/_all-skins.min.css">
+<?php } ?>
+
+<!--FIN CONTROLADOR ENCUESTA -->
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" ></script>
@@ -177,7 +217,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url();?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url();?>assets/dist/img/n.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -363,13 +403,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url();?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="<?php echo base_url();?>assets/dist/img/n.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $this->session->userdata('s_usuario'); ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url();?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url();?>assets/dist/img/n.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   <?php echo $this->session->userdata('s_usuario'); ?> - <?php echo $this->session->userdata('s_perfil'); ?>

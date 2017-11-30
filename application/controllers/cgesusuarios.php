@@ -52,7 +52,7 @@ class Cgesusuarios extends ci_Controller
       $param['codusu']  = $this->input->post('umdlcodusu');
       $param['codper']  = $this->input->post('umdlcodper');
       $param['userper']  = $this->input->post('umdltxtUsuario');
-      $param['pass']  = $this->input->post('umdlpassword');
+      $param['pass']  = sha1($this->input->post('umdlpassword'));
       $cdp = $this->input->post('umdlcodusu');
       echo $this->mgesusuarios->UdpUsuario($param,$cdp);
     }

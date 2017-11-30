@@ -1,3 +1,4 @@
+
 <div class="row">
 <div class="col-md-12">
           <div class="box box-primary">
@@ -7,32 +8,30 @@
             <div class="box-body">
 
               <div class="btn-group">
-              <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#modalNuevoUsuario"><i class="glyphicon glyphicon-plus"></i> Registar Nuevo Usuario</button>
+              <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modalNuevoUsuario"><i class="glyphicon glyphicon-plus"></i> Registar Nuevo Usuario</button>
               </div>
-
-
               <div class="box-footer">
                 <table id="tblgetUsuarios" class="table table-bordered table-striped">
                   <thead>
                     <tr>
                       <th style="width:  2%;">N°</th>
-                      <th style="width: 10%;">DNI</th>
-                      <th style="width: 12%;">Nombre</th>
+                      <th style="width: 8%;">DNI</th>
+                      <th style="width: 10%;">Nombre</th>
                       <th style="width: 10%;">Paterno</th>
                       <th style="width: 10%;">Materno</th>
                       <th style="width: 10%;">Sexo</th>
                       <th style="width: 10%;">Perfil</th>
-                      <th style="width: 11%;">Celular</th>
+                      <th style="width: 10%;">Celular</th>
                       <th style="width: 10%;">Email</th>
                       <th style="width: 10%;">F. Nacimiento</th>
-                      <th style="width: 10%;">Accion</th>
+                      <th style="width: 5%;">Accion</th>
                     </tr>
                   </thead>
                   <tbody></tbody>
                 </table>
               </div>
               <!-- /.box-footer -->
-  </div>
+            </div>
           </div>
         </div>
       </div>
@@ -42,7 +41,7 @@
       	<div class="modal-dialog modal-sm-7" role="document">
       		<div class="modal-content">
       			<!-- CABECERA MODAL-->
-      			<div class="modal-header btn-info">
+      			<div class="modal-header bg-primary">
       				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       				<h4 class="modal-title" id="myModalLabel">Nuevo Usuario</h4>
       			</div>
@@ -111,7 +110,7 @@
            <div class="form-group">
              <label class="col-sm-4 control-label">Email: </label>
              <div class="col-sm-7">
-               <input type="email" name="mdlEmail" class="form-control" id="mdlEmail" placeholder="Ingrese Email">
+               <input type="text" name="mdlEmail" class="form-control" id="mdlEmail" placeholder="Ingrese Email">
              </div>
            </div>
       					</div>
@@ -121,7 +120,7 @@
       			<!-- BOTONES -->
       			<div class="modal-footer">
       				<button type="button" class="btn btn-default" id="mbtnCerrarModal" data-dismiss="modal">Cancelar</button>
-      				<button type="button" class="btn btn-info" id="mbtnRegistrar">Registrar</button>
+      				<button type="button" class="btn btn-primary" id="mbtnRegistrar">Registrar</button>
       			</div>
       		</div>
       	</div>
@@ -192,7 +191,7 @@
          <div class="input-group-addon">
            <i class="fa fa-calendar"></i>
          </div>
-         <input maxlength="10" type="text" name="emdlfechaNacimiento" class="form-control pull-right" id="emdlfechaNacimiento">
+         <input maxlength="10" type="text" name="emdlfechaNacimiento" class="form-control pull-right" id="emdlfechaNacimiento" style="width: 100%;">
        </div>
      </div>
      <div class="form-group">
@@ -204,7 +203,7 @@
      <div class="form-group">
        <label class="col-sm-4 control-label">Email: </label>
        <div class="col-sm-7">
-         <input type="email" name="emdlEmail" class="form-control" id="emdlEmail" placeholder="Ingrese Email">
+         <input type="text" name="emdlEmail" class="form-control" id="emdlEmail" placeholder="Ingrese Email">
        </div>
      </div>
           </div>
@@ -214,7 +213,7 @@
       <!-- BOTONES -->
       <div class="modal-footer">
         <button type="button" class="btn btn-default" id="embtnCerrarModal" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-info" id="embtnActualizar">Actualizar</button>
+        <button type="button" class="btn btn-primary" id="embtnActualizar">Actualizar</button>
       </div>
     </div>
   </div>
@@ -228,7 +227,7 @@
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <!-- CABECERA MODAL-->
-      <div class="modal-header bg-green">
+      <div class="modal-header bg-blue">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Crea y/o modificar Usuario</h4>
       </div>
@@ -270,7 +269,7 @@
       <!-- BOTONES -->
       <div class="modal-footer">
         <button type="button" class="btn btn-default" id="umbtnCancelar" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-info" id="mbtnCrearUsuario">Crear Usuario</button>
+        <button type="button" class="btn bg-blue" id="mbtnCrearUsuario">Crear Usuario</button>
       </div>
     </div>
   </div>

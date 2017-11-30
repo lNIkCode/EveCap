@@ -6,6 +6,7 @@ class Creportes extends ci_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('mreportes');
 	}
 
 	public function index (){
@@ -14,4 +15,24 @@ class Creportes extends ci_Controller
 		$this->load->view('vreportes');
 		$this->load->view('layout/footer');
 	}
+
+	public function getEvexAsi()
+	{
+		$result = $this->mreportes->getEvexAsi();
+		echo json_encode($result);
+	}
+
+	public function getPonxAsi()
+	{
+		$result = $this->mreportes->getPonxAsi();
+		echo json_encode($result);
+	}
+
+	public function getPonxAsixEve()
+	{
+		$ideve = $this->post->idcbevento();
+		$result = $this->mreportes->getPonxAsixEve($ideve);
+		echo json_encode($result);
+	}
+
 }

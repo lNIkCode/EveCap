@@ -32,7 +32,7 @@ class Mregpersonas extends CI_Model
                  LEFT JOIN persona p ON a.codper = p.codper
                  LEFT JOIN subevento s ON a.codsubeve = s.codsubeve,
                  (SELECT @rownum := 0) r
-                 WHERE (s.codsubeve = $b AND s.codeve = $a)
+                 WHERE (s.codsubeve = $b AND s.codeve = $a AND p.estper = 1)
            ";
 
       $r = $this->db->query($q);
@@ -43,15 +43,16 @@ class Mregpersonas extends CI_Model
     public function RegistroPersona($param,$dniper)
     {
       $q = "SELECT p.dniper FROM persona p
-            WHERE (p.estper = 1)";
+            WHERE (p.estper = 1 AND p.dniper = $dniper)";
       $r = $this->db->query($q);
-      if ($dniper != $r) {
+
+      if ($r->num_rows() > 0) {
         $query = "SELECT CAST(p.codper as INT) as codper FROM persona p
               WHERE (p.estper = 1 AND p.dniper = $dniper)";
-              $query = $this->db->query($query);
-              $query = $query->row();
-              $query = $query->codper;
-              return $codper = $query;
+              $q = $this->db->query($query);
+              $qr = $q->row();
+              $codper = $qr->codper;
+              return $codper;
         }else{
         $campos = array(
           'dniper'  => $param['dniper'],
@@ -66,14 +67,14 @@ class Mregpersonas extends CI_Model
       }
     }
 
-    public function RegistroAsistencia($paramasis,$paramval)
+    public function RegistroAsistencia($paramasis,$ce,$cs,$cp)
     {
-      $validacio = array(
-        'codeve' => $paramval['codeve'],
-        'codeve' => $paramval['codsubeve'],
-        'codeve' => $paramval['codper'],
-      );
-      if ($paramval != $validacio)
+      $q = "SELECT *
+            FROM asistencia
+            WHERE codeve = $ce  AND codsubeve = $cs AND codper = $cp";
+      $r = $this->db->query($q);
+
+      if ($r->num_rows() > 0)
       {
         return 666;
       }else {

@@ -98,7 +98,7 @@ function llenado_tabla_subevento() {
 				render: function(data, type, row) {
 					return '<span class="pull-right">' +
 						'<div class="dropdown">' +
-						'  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
+						'  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
 						'    Acciones' +
 						'  <span class="caret"></span>' +
 						'  </button>' +
@@ -140,6 +140,8 @@ $(function() {
 		showMeridian: false,
 		showInputs: false
 	});
+	/*var f = new Date();
+  document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());*/
 });
 
 $('#btnguardar').click(function() {
@@ -162,10 +164,9 @@ if (cl == "") {ecbxvacio = ecbxvacio+"un Lugar, ";}
 if (fe == "") {ecvacio = ecvacio+"fecha del subvento, ";}
 if (hi == "") {ecvacio = ecvacio+"Hora Inicio subevento, ";}
 if (hf == "") {ecvacio = ecvacio+"Hora Fin subevento, ";}
-
+if (hi >= hf) {emensajeError = emensajeError+"<p>* la hora de inicio debe ser menor a la hora fin </P>";}
 if (ecvacio != "") {emensajeError = "<P>* el campo "+ecvacio+emensajeError+"esta vacio<p>";}
 if (ecbxvacio != "") {emensajeError = "<P>* debe seleccionar "+ecbxvacio+emensajeError;}
-
 if (emensajeError != "") {$('#MErrorsubeve').html(emensajeError);}
 else {
 	$.post(baseurl + "csubeventos/guardarsubevento", {
@@ -261,13 +262,13 @@ else {
 		$.post(baseurl+"csubeventos/updsubeventos",
 	{
 				mdlidsubevento:z,
-				mdltxtnomsub:a,
-				mdltxtdescsub:b,
+				mdltxtnomsub  :a,
+				mdltxtdescsub :b,
 				mdlcbexpositor:c,
-				mdlcblugar:d,
-				datepicker1:e,
-				timepicker:f,
-				timepicker1:g
+				mdlcblugar    :d,
+				datepicker1   :e,
+				timepicker    :f,
+				timepicker1   :g
 	},
 	function (data) {
 		if (data == 1) {
